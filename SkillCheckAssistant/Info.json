@@ -1,0 +1,14 @@
+{
+  "AssemblyName": "SkillCheckAssistant.dll",
+  "Author": "AlterAsc",
+  "DisplayName": "SkillCheckAssistant",
+  "EntryMethod": "SkillCheckAssistant.Main.Load",
+  "GameVersion": "0.21.0",
+  "HomePage": "https://www.nexusmods.com/warhammer40kroguetrader/mods/3",
+  "Id": "SkillCheckAssistant",
+  "ManagerVersion": "0.23.0",
+  "Repository": "https://raw.githubusercontent.com/alterasc/SkillCheckAssistant/main/Repository.json",
+  "Requirements": [],
+  "LoadAfter": [],
+  "Version": "1.0.0"
+}
