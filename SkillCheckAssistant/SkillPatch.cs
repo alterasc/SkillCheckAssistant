@@ -1,4 +1,5 @@
 ﻿using HarmonyLib;
+using Kingmaker;
 using Kingmaker.EntitySystem.Stats.Base;
 using Kingmaker.RuleSystem.Rules;
 
@@ -11,8 +12,25 @@ namespace SkillCheckAssistant
         [HarmonyPrefix]
         public static bool RulePerformSkillCheck_RollChanceRule(RulePerformSkillCheck __instance, ref RuleRollChance __result)
         {
+            if (!__instance.Initiator.IsPlayerFaction)
+            {
+                return true;
+            }            
+            if (Game.Instance.Player.IsInCombat && Main.Settings.OnlyOutOfCombat)
+            {
+                return true;
+            }
             int action = __instance.StatType switch
             {
+                StatType.WarhammerWeaponSkill => Main.Settings.WarhammerWeaponSkill,
+                StatType.WarhammerBallisticSkill => Main.Settings.WarhammerBallisticSkill,
+                StatType.WarhammerStrength => Main.Settings.WarhammerStrength,
+                StatType.WarhammerToughness => Main.Settings.WarhammerToughness,
+                StatType.WarhammerAgility => Main.Settings.WarhammerAgility,
+                StatType.WarhammerIntelligence => Main.Settings.WarhammerIntelligence,
+                StatType.WarhammerPerception => Main.Settings.WarhammerPerception,
+                StatType.WarhammerWillpower => Main.Settings.WarhammerWillpower,
+                StatType.WarhammerFellowship => Main.Settings.WarhammerFellowship,
                 StatType.SkillAthletics => Main.Settings.SkillAthletics,
                 StatType.SkillCarouse => Main.Settings.SkillCarouse,
                 StatType.SkillDemolition => Main.Settings.SkillDemolition,
@@ -28,7 +46,7 @@ namespace SkillCheckAssistant
                 StatType.SkillPersuasion => Main.Settings.SkillPersuasion,
                 StatType.CheckBluff => Main.Settings.SkillPersuasion,
                 StatType.CheckDiplomacy => Main.Settings.SkillPersuasion,
-                StatType.CheckIntimidate => Main.Settings.SkillCoercion,
+                StatType.CheckIntimidate => Main.Settings.SkillCoercion,                
                 _ => 0,
             };
             if (action == 0) return true;

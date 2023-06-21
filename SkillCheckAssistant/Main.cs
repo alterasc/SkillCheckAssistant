@@ -41,6 +41,14 @@ namespace SkillCheckAssistant
 
         static void OnGUI(UnityModManager.ModEntry modEntry)
         {
+            GUILayout.BeginHorizontal();
+            Settings.OnlyOutOfCombat = GUILayout.Toggle(Settings.OnlyOutOfCombat, "Only out of combat rolls");
+            GUILayout.EndHorizontal();
+
+            GUILayout.BeginHorizontal();
+            GUILayout.Space(40);
+            GUILayout.EndHorizontal();
+
             string[] toolbarStrings = { "Roll normally", "Take 50", "Take 33", "Take 25", "Take 10", "Take 1" };
             var labelWidth = GUILayout.Width(GUI.skin.label.CalcSize(new GUIContent("Lore (Imperium)   ")).x);
 
@@ -48,6 +56,55 @@ namespace SkillCheckAssistant
             {
                 fixedWidth = GUI.skin.button.CalcSize(new GUIContent("Roll normally  ")).x
             };
+
+            GUILayout.BeginHorizontal();
+            GUILayout.Label("Weapon Skill", labelWidth);
+            Settings.WarhammerWeaponSkill = GUILayout.Toolbar(Settings.WarhammerWeaponSkill, toolbarStrings, toolbarButtonStyle);
+            GUILayout.EndHorizontal();
+
+            GUILayout.BeginHorizontal();
+            GUILayout.Label("Ballistic Skill", labelWidth);
+            Settings.WarhammerBallisticSkill = GUILayout.Toolbar(Settings.WarhammerBallisticSkill, toolbarStrings, toolbarButtonStyle);
+            GUILayout.EndHorizontal();
+
+            GUILayout.BeginHorizontal();
+            GUILayout.Label("Strength", labelWidth);
+            Settings.WarhammerStrength = GUILayout.Toolbar(Settings.WarhammerStrength, toolbarStrings, toolbarButtonStyle);
+            GUILayout.EndHorizontal();
+
+            GUILayout.BeginHorizontal();
+            GUILayout.Label("Toughness", labelWidth);
+            Settings.WarhammerToughness = GUILayout.Toolbar(Settings.WarhammerToughness, toolbarStrings, toolbarButtonStyle);
+            GUILayout.EndHorizontal();
+
+            GUILayout.BeginHorizontal();
+            GUILayout.Label("Agility", labelWidth);
+            Settings.WarhammerAgility = GUILayout.Toolbar(Settings.WarhammerAgility, toolbarStrings, toolbarButtonStyle);
+            GUILayout.EndHorizontal();
+
+            GUILayout.BeginHorizontal();
+            GUILayout.Label("Intelligence", labelWidth);
+            Settings.WarhammerIntelligence = GUILayout.Toolbar(Settings.WarhammerIntelligence, toolbarStrings, toolbarButtonStyle);
+            GUILayout.EndHorizontal();
+
+            GUILayout.BeginHorizontal();
+            GUILayout.Label("Perception", labelWidth);
+            Settings.WarhammerPerception = GUILayout.Toolbar(Settings.WarhammerPerception, toolbarStrings, toolbarButtonStyle);
+            GUILayout.EndHorizontal();
+
+            GUILayout.BeginHorizontal();
+            GUILayout.Label("Willpower", labelWidth);
+            Settings.WarhammerWillpower = GUILayout.Toolbar(Settings.WarhammerWillpower, toolbarStrings, toolbarButtonStyle);
+            GUILayout.EndHorizontal();
+
+            GUILayout.BeginHorizontal();
+            GUILayout.Label("Fellowship", labelWidth);
+            Settings.WarhammerFellowship = GUILayout.Toolbar(Settings.WarhammerFellowship, toolbarStrings, toolbarButtonStyle);
+            GUILayout.EndHorizontal();
+
+            GUILayout.BeginHorizontal();
+            GUILayout.Space(40);
+            GUILayout.EndHorizontal();
 
             GUILayout.BeginHorizontal();
             GUILayout.Label("Athletics", labelWidth);

@@ -4,6 +4,18 @@ namespace SkillCheckAssistant
 {
     public class CheckAssistantSettings : UnityModManager.ModSettings
     {
+        public bool OnlyOutOfCombat = true;
+
+        public int WarhammerWeaponSkill = 0;
+        public int WarhammerBallisticSkill = 0;
+        public int WarhammerStrength = 0;
+        public int WarhammerToughness = 0;
+        public int WarhammerAgility = 0;
+        public int WarhammerIntelligence = 0;
+        public int WarhammerPerception = 0;
+        public int WarhammerWillpower = 0;
+        public int WarhammerFellowship = 0;
+
         public int SkillAthletics = 0;
         public int SkillCarouse = 0;
         public int SkillDemolition = 0;
