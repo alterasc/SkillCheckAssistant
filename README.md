@@ -2,7 +2,7 @@
 
 Allows taking (rolling preset value) when doing skill checks.
 Available options are: roll normally, take 50, take 33, take 25, take 10, take 1.
-Settings are per individual skill
+Settings are per individual skill.
 
 By default everything is rolled normally.
 

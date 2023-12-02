@@ -29,10 +29,12 @@ namespace SkillCheckAssistant
             return true;
         }
 
+#if DEBUG
         static bool OnUnload(UnityModManager.ModEntry modEntry)
         {
             return true;
         }
+#endif
         static bool OnToggle(UnityModManager.ModEntry modEntry, bool value)
         {
             Enabled = value;

@@ -15,8 +15,12 @@ namespace SkillCheckAssistant
             if (!__instance.Initiator.IsPlayerFaction)
             {
                 return true;
-            }            
+            }
             if (Game.Instance.Player.IsInCombat && Main.Settings.OnlyOutOfCombat)
+            {
+                return true;
+            }
+            if (__instance.EnsureSuccess.HasValue)
             {
                 return true;
             }
@@ -46,7 +50,7 @@ namespace SkillCheckAssistant
                 StatType.SkillPersuasion => Main.Settings.SkillPersuasion,
                 StatType.CheckBluff => Main.Settings.SkillPersuasion,
                 StatType.CheckDiplomacy => Main.Settings.SkillPersuasion,
-                StatType.CheckIntimidate => Main.Settings.SkillCoercion,                
+                StatType.CheckIntimidate => Main.Settings.SkillCoercion,
                 _ => 0,
             };
             if (action == 0) return true;
