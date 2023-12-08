@@ -30,6 +30,8 @@ namespace SkillCheckAssistant
         public int SkillCommerce = 0;
         public int SkillPersuasion = 0;
 
+        public bool RollIfTakeIsNotEnough = false;
+
         public new void Save(UnityModManager.ModEntry modEntry) => Save(this, modEntry);
     }
 }

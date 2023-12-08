@@ -1,6 +1,6 @@
 {
   "UniqueName": "SkillCheckAssistant",
-  "Version": "1.2.0",
+  "Version": "1.3.0",
   "DisplayName": "Characteristics and skills check assistant",
   "Description": "Allows taking (rolling preset value) when doing characteristics and skills checks.",
   "Author": "AlterAsc",

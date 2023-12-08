@@ -2,6 +2,7 @@
 using Kingmaker;
 using Kingmaker.EntitySystem.Stats.Base;
 using Kingmaker.RuleSystem.Rules;
+using System.Collections.Generic;
 
 namespace SkillCheckAssistant
 {
@@ -64,7 +65,16 @@ namespace SkillCheckAssistant
                 _ => 0
             };
             if (rollValue == 0) return true;
-            __result = RuleRollChance.FromInt(__instance.Initiator, __instance.GetSuccessChance(), rollValue, __instance.StatType);
+
+            if (rollValue > __instance.GetSuccessChance())
+            {
+                if (Main.Settings.RollIfTakeIsNotEnough)
+                {
+                    return true;
+                }
+            }
+            __result = RuleRollChance.FromInt(__instance.Initiator, __instance.GetSuccessChance(0), rollValue, __instance.StatType, RollChanceType.Untyped, null);
+            __result.RollHistory = new List<int> { rollValue };
             return false;
         }
     }

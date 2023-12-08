@@ -48,6 +48,10 @@ namespace SkillCheckAssistant
             GUILayout.EndHorizontal();
 
             GUILayout.BeginHorizontal();
+            Settings.RollIfTakeIsNotEnough = GUILayout.Toggle(Settings.RollIfTakeIsNotEnough, "If chosen \"Take X\" value is not high enough to succeed, try rolling check normally.");
+            GUILayout.EndHorizontal();
+
+            GUILayout.BeginHorizontal();
             GUILayout.Space(40);
             GUILayout.EndHorizontal();
 
