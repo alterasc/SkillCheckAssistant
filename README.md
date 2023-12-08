@@ -8,7 +8,7 @@ By default everything is rolled normally.
 
 ### Added in 1.3.0
 
-Option `If chosen "Take X" value is not high enough to succeed, try rolling check normally.`
+Option `If chosen "Take X" value is not low enough to succeed, try rolling check normally.`
 Default: off   
 This is for when you want to take X when X is enough, and try to roll if it's not. For playstyle where you don't want to reload for easy checks, but want to make harder ones a gamble and make use of things that allow rerolling (like Advanced Skill).
 
